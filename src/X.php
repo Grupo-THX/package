@@ -120,20 +120,13 @@ class U{
 
     static function urlAtual($remove_GET = false)
 	{
-		try
+		$protocolo =  isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? "https://" : 'http://';
+		$retorno = $protocolo.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+		if($remove_GET)
 		{
-			$protocolo =  isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? "https://" : 'http://';
-			$retorno = $protocolo.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-			if($remove_GET)
-			{
-				$urlParts = explode('?', $retorno);
-				return $urlParts[0];
-			}
-			return $retorno;
+			$urlParts = explode('?', $retorno);
+			return $urlParts[0];
 		}
-		catch( Exception $e )
-		{
-			X::sendErrors($e->getMessage(), __CLASS__.'>'.__FUNCTION__.'>'.__LINE__);
-		}
+		return $retorno;
 	}
 }
