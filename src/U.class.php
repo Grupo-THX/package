@@ -1,4 +1,5 @@
 <?php
+namespace GrupoThx;
 class U
 {
 	static function valorPorExtenso($valor, $bolExibirMoeda = true, $bolPalavraFeminina = false)
