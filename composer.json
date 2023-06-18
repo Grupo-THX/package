@@ -1,6 +1,20 @@
 {
+    "name": "grupothx/package",
+    "type": "library",
+    "description": "Classes X-Painel",
+    "keywords": ["package","package"],
+    "homepage": "https://github.com/Grupo-THX/package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jardel",
+            "email": "deljdl@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {
-        "phpmailer/phpmailer": "^6.4"
+        "php": ">=5.3.0"
     },
     "autoload": {
         "classmap": ["class"]
